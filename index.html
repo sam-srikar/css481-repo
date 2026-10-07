@@ -1,24 +1,88 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>My Page</title>
-    </head>
-    <body>
-        <p>Hello, World!</p>
-        <h1>Welcome to My Movie List</h1>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 1 - Personal Website</title>
+  </head>
+  <body>
+    <header>
+      <h1>Sam's Personal Website</h1>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">About Me</a>
+        <a href="favorites.html">Favorites</a>
+        <a href="movies.html">Movies</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>About Me</h2>
+        <p>Hello! My name is <strong>Sam</strong>, and I am a student who enjoys learning, creating, and exploring new ideas.</p>
+        <p>I like to spend time <em>reading</em>, <em>walking</em>, and <em>trying new foods</em> whenever I can.</p>
+        <blockquote>
+          "Small habits and steady effort can lead to big results."
+        </blockquote>
+      </section>
+
+      <article>
+        <h3>My Interests</h3>
         <ul>
-            <li>Spirited Away</li>
-            <li>The Princess Bride</li>
-            <li>Inception</li>
-            <li>La La Land</li>
-            <li>Arrival</li>
+          <li>Technology and design</li>
+          <li>Photography</li>
+          <li>Cooking and trying new recipes</li>
+          <li>Learning new skills</li>
         </ul>
+        
+        <h3>Some Tips for Success I Believe In</h3>
         <ol>
-            <li>Casablanca</li>
-            <li>Everything Everywhere All at Once</li>
-            <li>Moonlight</li>
-            <li>Spider-Man: Into the Spider-Verse</li>
-            <li>Whiplash</li>
+          <li>Start with one clear goal.</li>
+          <li>Stay consistent each day.</li>
+          <li>Keep improving little by little.</li>
         </ol>
-    </body>
+      </article>
+
+      <section>
+        <h3>Favorite Things</h3>
+        <table>
+          <caption>My quick favorites</caption>
+          <thead>
+            <tr>
+              <th scope="col">Category</th>
+              <th scope="col">Favorite</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Season</td>
+              <td>Fall</td>
+            </tr>
+            <tr>
+              <td>TV Show</td>
+              <td>One Piece</td>
+            </tr>
+            <tr>
+              <td>Food</td>
+              <td>Pasta</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <aside>
+        <h3>Fun Fact</h3>
+        <p>I like taking time to notice the details in everyday life, like a good conversation, a cozy place, or a beautiful sunset.</p>
+      </aside>
+
+      <figure>
+        <img src="images/screenshot-2026-10-05-9-16-04.png" alt="Screenshot taken on October 5 at 9:16 PM" width="900" height="600">
+        <figcaption>This is a recent picture I wanted to feature.</figcaption>
+      </figure>
+    </main>
+
+    <footer>
+      <p><small>Updated <time datetime="2026-10-05">October 5, 2026</time></small></p>
+    </footer>
+  </body>
 </html>
