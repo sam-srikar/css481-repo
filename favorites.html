@@ -4,40 +4,45 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Favorites</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header>
-      <h1>My Favorite Activities</h1>
-      <nav aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="aboutme.html">About Me</a>
-        <a href="favorites.html">Favorites</a>
-        <a href="movies.html">Movies</a>
-      </nav>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="site-title">My Favorite Activities</h1>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="aboutme.html">About Me</a>
+          <a href="favorites.html">Favorites</a>
+          <a href="movies.html">Movies</a>
+        </nav>
+      </div>
     </header>
 
-    <main>
-      <section>
-        <h2>Things I Enjoy Most</h2>
-        <ul>
-          <li>Listening to music</li>
-          <li>Spending time with my dog, Chai</li>
-          <li>Trying new foods</li>
-          <li>Watching movies and shows</li>
-          <li>Learning new skills</li>
-        </ul>
-      </section>
+    <main class="page-content container">
+      <div class="favorites-grid">
+        <section class="favorites-card">
+          <h2>Things I Enjoy Most</h2>
+          <ul>
+            <li>Listening to music</li>
+            <li>Spending time with my dog, Chai</li>
+            <li>Trying new foods</li>
+            <li>Watching movies and shows</li>
+            <li>Learning new skills</li>
+          </ul>
+        </section>
 
-      <section>
-        <h2>Favorite Weekend Activities</h2>
-        <ol>
-          <li>Going for a relaxed walk</li>
-          <li>Finding a good coffee shop</li>
-          <li>Watching a movie with friends</li>
-          <li>Cooking something fun and new</li>
-          <li>Taking time to rest and recharge</li>
-        </ol>
-      </section>
+        <section class="favorites-card">
+          <h2>Favorite Weekend Activities</h2>
+          <ol>
+            <li>Going for a relaxed walk</li>
+            <li>Finding a good coffee shop</li>
+            <li>Watching a movie with friends</li>
+            <li>Cooking something fun and new</li>
+            <li>Taking time to rest and recharge</li>
+          </ol>
+        </section>
+      </div>
     </main>
   </body>
 </html>

@@ -4,10 +4,29 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>About Me</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1>About Me</h1>
-        <p>My name is Sam and I am a student at the University of Washington.</p>
-        <a href="index.html">Back to Home</a>
+        <header class="site-header">
+            <div class="container">
+                <h1 class="site-title">About Me</h1>
+                <nav class="main-nav" aria-label="Main navigation">
+                    <a href="index.html">Home</a>
+                    <a href="aboutme.html">About Me</a>
+                    <a href="favorites.html">Favorites</a>
+                    <a href="movies.html">Movies</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="page-content container">
+            <section class="hero">
+                <h2>Who I Am</h2>
+                <p>My name is Sam and I am a student at the University of Washington.</p>
+                <p>I am interested in learning new skills, discovering creative ideas, and building things that are useful and meaningful.</p>
+            </section>
+
+            <a class="back-link" href="index.html">Back to Home</a>
+        </main>
     </body>
 </html>

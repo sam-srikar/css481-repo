@@ -1,0 +1,262 @@
+:root {
+  --bg: #f3e9f8;
+  --panel: #f9f4fb;
+  --header: #d8c3e8;
+  --accent: #6d4ea3;
+  --accent-dark: #47386f;
+  --text: #2d2436;
+  --muted: #5d5267;
+  --shadow: rgba(62, 40, 88, 0.12);
+  --border: rgba(109, 78, 163, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+.container {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  background: var(--header);
+  border-bottom: 2px solid var(--border);
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 0;
+}
+
+.site-title {
+  margin: 0;
+  font-size: clamp(1.6rem, 2vw, 2.4rem);
+  color: var(--accent-dark);
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.main-nav a {
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.32);
+  color: var(--accent-dark);
+  font-weight: 700;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  background: white;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.page-content {
+  padding: 2rem 0 3rem;
+}
+
+.hero,
+.info-card,
+.movie-card,
+.favorites-card {
+  background: rgba(255, 255, 255, 0.28);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px var(--shadow);
+}
+
+.hero {
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero h2 {
+  margin-top: 0;
+  color: var(--accent-dark);
+  font-size: clamp(1.8rem, 2vw, 2.4rem);
+}
+
+.content-grid,
+.movie-grid,
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.info-card,
+.movie-card,
+.favorites-card {
+  padding: 1.5rem;
+}
+
+.info-card h3,
+.movie-card h3,
+.favorites-card h3 {
+  margin-top: 0;
+  color: var(--accent-dark);
+}
+
+.info-card ul,
+.info-card ol,
+.favorites-card ul,
+.favorites-card ol,
+.movie-card ul,
+.movie-card ol {
+  padding-left: 1.2rem;
+  margin: 0.75rem 0 0;
+}
+
+blockquote {
+  margin: 1rem 0 0;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid var(--accent);
+  background: rgba(109, 78, 163, 0.08);
+  color: var(--muted);
+  font-style: italic;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+th,
+td {
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+th {
+  background: rgba(109, 78, 163, 0.08);
+}
+
+figure {
+  margin: 1.5rem 0 0;
+}
+
+figure img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+figcaption {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-footer {
+  padding: 1.25rem 0 2.5rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+.movie-card {
+  list-style: none;
+}
+
+.movie-card li {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(109, 78, 163, 0.12);
+}
+
+.movie-card li:last-child {
+  border-bottom: none;
+}
+
+.favorites-card p {
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 700px) {
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 0;
+  }
+
+  .main-nav {
+    width: 100%;
+  }
+
+  .main-nav a {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .hero,
+  .info-card,
+  .movie-card,
+  .favorites-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.96rem;
+  }
+
+  .page-content {
+    padding-top: 1.25rem;
+  }
+
+  .site-title {
+    font-size: 1.5rem;
+  }
+
+  th,
+  td {
+    padding: 0.6rem 0.5rem;
+  }
+}
