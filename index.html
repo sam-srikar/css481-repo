@@ -1,95 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework 1 - Personal Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      :root {
+        --page-bg: #cdb6d8;
+        --text: #2c2d32;
+        --key-bg: #e7e7e7;
+        --key-text: #1d1d1d;
+        --danger: #db1c1c;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html, body {
+        margin: 0;
+        min-height: 100%;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: var(--page-bg);
+        color: var(--text);
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+
+      .calculator-panel {
+        width: min(100%, 360px);
+      }
+
+      .calculator-shell {
+        width: 100%;
+        background: rgba(230,230,230,0.25);
+        border: 1px solid rgba(72, 72, 72, 0.15);
+        padding: 12px 14px 16px;
+        border-radius: 6px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      }
+
+      .display {
+        width: 100%;
+        min-height: 52px;
+        border: 1px solid #808080;
+        background: rgba(255,255,255,0.5);
+        border-radius: 4px;
+        font-size: clamp(1.8rem, 2vw, 2.5rem);
+        text-align: right;
+        padding: 10px 12px;
+        color: #1b1b1d;
+      }
+
+      .keypad {
+        margin-top: 14px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(52px, 1fr));
+        gap: 10px;
+      }
+
+      .key {
+        border: 1px solid #a6a6a6;
+        background: var(--key-bg);
+        color: var(--key-text);
+        font-size: 2rem;
+        font-weight: 700;
+        min-height: 56px;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: inset 0 -2px 0 rgba(0,0,0,0.08);
+        transition: transform 0.08s ease, filter 0.2s ease;
+      }
+
+      .key:hover {
+        filter: brightness(0.98);
+      }
+
+      .key:active {
+        transform: translateY(1px);
+      }
+
+      .key.operator {
+        background: rgba(40, 40, 40, 0.82);
+        color: #f7f7f8;
+      }
+
+      .key.clear {
+        background: var(--danger);
+        color: #fff;
+      }
+    </style>
   </head>
   <body>
-    <header class="site-header">
-      <div class="container">
-        <h1 class="site-title">Sam's Personal Website</h1>
-        <nav class="main-nav" aria-label="Main navigation">
-          <a href="index.html">Home</a>
-          <a href="aboutme.html">About Me</a>
-          <a href="favorites.html">Favorites</a>
-          <a href="movies.html">Movies</a>
-        </nav>
+    <main class="calculator-panel" aria-label="Calculator panel">
+      <div class="calculator-shell">
+        <input id="calculatorDisplay" class="display" type="text" value="0" aria-label="Calculator display" readonly />
+
+        <div class="keypad" aria-label="Calculator buttons">
+          <button class="key" type="button" data-value="7">7</button>
+          <button class="key" type="button" data-value="8">8</button>
+          <button class="key" type="button" data-value="9">9</button>
+          <button class="key operator" type="button" data-action="divide">÷</button>
+
+          <button class="key" type="button" data-value="4">4</button>
+          <button class="key" type="button" data-value="5">5</button>
+          <button class="key" type="button" data-value="6">6</button>
+          <button class="key operator" type="button" data-action="multiply">×</button>
+
+          <button class="key" type="button" data-value="1">1</button>
+          <button class="key" type="button" data-value="2">2</button>
+          <button class="key" type="button" data-value="3">3</button>
+          <button class="key operator" type="button" data-action="subtract">−</button>
+
+          <button class="key clear" type="button" data-action="clear">C</button>
+          <button class="key" type="button" data-value="0">0</button>
+          <button class="key" type="button" data-action="equals">=</button>
+          <button class="key operator" type="button" data-action="add">+</button>
+        </div>
       </div>
-    </header>
-
-    <main class="page-content container">
-      <section class="hero">
-        <h2>About Me</h2>
-        <p>Hello! My name is <strong>Sam</strong>, and I am a student who enjoys learning, creating, and exploring new ideas.</p>
-        <p>I like to spend time <em>reading</em>, <em>walking</em>, and <em>trying new foods</em> whenever I can.</p>
-        <blockquote>
-          "Small habits and steady effort can lead to big results."
-        </blockquote>
-      </section>
-
-      <div class="content-grid">
-        <article class="info-card">
-          <h3>My Interests</h3>
-          <ul>
-            <li>Technology and design</li>
-            <li>Photography</li>
-            <li>Cooking and trying new recipes</li>
-            <li>Learning new skills</li>
-          </ul>
-        </article>
-
-        <article class="info-card">
-          <h3>Some Tips for Success I Believe In</h3>
-          <ol>
-            <li>Start with one clear goal.</li>
-            <li>Stay consistent each day.</li>
-            <li>Keep improving little by little.</li>
-          </ol>
-        </article>
-
-        <section class="info-card">
-          <h3>Favorite Things</h3>
-          <table>
-            <caption>My quick favorites</caption>
-            <thead>
-              <tr>
-                <th scope="col">Category</th>
-                <th scope="col">Favorite</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Season</td>
-                <td>Fall</td>
-              </tr>
-              <tr>
-                <td>TV Show</td>
-                <td>One Piece</td>
-              </tr>
-              <tr>
-                <td>Food</td>
-                <td>Pasta</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-
-        <aside class="info-card">
-          <h3>Fun Fact</h3>
-          <p>I like taking time to notice the details in everyday life, like a good conversation, a cozy place, or a beautiful sunset.</p>
-        </aside>
-      </div>
-
-      <figure>
-        <img src="images/screenshot-2026-10-05-9-16-04.png" alt="Screenshot taken on October 5 at 9:16 PM" width="900" height="600">
-        <figcaption>This is a recent picture I wanted to feature.</figcaption>
-      </figure>
     </main>
 
-    <footer class="site-footer">
-      <p><small>Updated <time datetime="2026-10-05">October 5, 2026</time></small></p>
-    </footer>
+    <script src="JavaScript/calculator.js"></script>
   </body>
 </html>
