@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famous Landmarks Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="site-title">Famous Landmarks</h1>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="aboutme.html">About Me</a>
+          <a href="favorites.html">Favorites</a>
+          <a href="movies.html">Movies</a>
+          <a href="landmark-gallery.html" aria-current="page">Landmarks</a>
+          <a href="movie-database.html">Movie Database</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-content container">
+      <section class="landmark-gallery" aria-labelledby="gallery-title">
+        <h2 id="gallery-title">Explore the world’s landmarks</h2>
+        <figure class="landmark-card">
+          <img
+            id="landmark-image"
+            src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+            alt="The Eiffel Tower rising above Paris"
+          >
+          <figcaption>
+            <span id="landmark-name">Eiffel Tower — Paris, France</span>
+            <span id="landmark-count" aria-live="polite">1 of 4</span>
+          </figcaption>
+        </figure>
+        <p id="image-error" class="gallery-error" role="status" hidden>
+          This image could not be loaded. Please check your internet connection and try again.
+        </p>
+        <div class="gallery-controls" aria-label="Gallery controls">
+          <button id="previous-button" type="button">Previous</button>
+          <button id="next-button" type="button">Next</button>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const landmarks = [
+        {
+          name: "Eiffel Tower — Paris, France",
+          alt: "The Eiffel Tower rising above Paris",
+          image: "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=1200&q=80"
+        },
+        {
+          name: "Taj Mahal — Agra, India",
+          alt: "The white marble Taj Mahal and its reflecting pool",
+          image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80"
+        },
+        {
+          name: "Colosseum — Rome, Italy",
+          alt: "The ancient stone arches of the Colosseum",
+          image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=80"
+        },
+        {
+          name: "Great Wall of China — China",
+          alt: "The Great Wall winding across green mountain ridges",
+          image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1200&q=80"
+        }
+      ];
+
+      const image = document.getElementById("landmark-image");
+      const name = document.getElementById("landmark-name");
+      const count = document.getElementById("landmark-count");
+      const error = document.getElementById("image-error");
+      let currentIndex = 0;
+
+      function showLandmark(index) {
+        currentIndex = (index + landmarks.length) % landmarks.length;
+        const landmark = landmarks[currentIndex];
+
+        image.src = landmark.image;
+        image.alt = landmark.alt;
+        name.textContent = landmark.name;
+        count.textContent = `${currentIndex + 1} of ${landmarks.length}`;
+        error.hidden = true;
+      }
+
+      image.addEventListener("error", () => {
+        error.hidden = false;
+      });
+
+      document.getElementById("previous-button").addEventListener("click", () => {
+        showLandmark(currentIndex - 1);
+      });
+
+      document.getElementById("next-button").addEventListener("click", () => {
+        showLandmark(currentIndex + 1);
+      });
+    </script>
+  </body>
+</html>

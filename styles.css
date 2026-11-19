@@ -218,6 +218,76 @@ figcaption {
   margin: 0.5rem 0;
 }
 
+.landmark-gallery {
+  width: min(100%, 800px);
+  margin: 0 auto;
+  padding: 1.5rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.28);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px var(--shadow);
+}
+
+.landmark-gallery h2 {
+  margin: 0 0 1rem;
+  color: var(--accent-dark);
+}
+
+.landmark-card {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.landmark-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.landmark-card figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.gallery-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gallery-controls button {
+  padding: 0.65rem 1.25rem;
+  border: 1px solid var(--accent-dark);
+  border-radius: 999px;
+  background: var(--accent);
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.gallery-controls button:hover,
+.gallery-controls button:focus-visible {
+  background: var(--accent-dark);
+}
+
+.gallery-controls button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.gallery-error {
+  color: #8b1e1e;
+}
+
 @media (max-width: 700px) {
   .site-header .container {
     flex-direction: column;
@@ -237,7 +307,8 @@ figcaption {
   .hero,
   .info-card,
   .movie-card,
-  .favorites-card {
+  .favorites-card,
+  .landmark-gallery {
     padding: 1rem;
   }
 }
@@ -258,5 +329,10 @@ figcaption {
   th,
   td {
     padding: 0.6rem 0.5rem;
+  }
+
+  .landmark-card figcaption {
+    flex-direction: column;
+    gap: 0.2rem;
   }
 }
